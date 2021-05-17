@@ -31,7 +31,7 @@ function ToUnit(){
 
 function table(model){
     return [
-    { LeftValue: model.LeftValue, LeftUnit: model.LeftUnit, RightValue: model.RightValue, Total: model.RightUnit },
+    { LeftValue: model.LeftValue, LeftUnit: model.LeftUnit, RightValue: model.RightValue, RightUnit: model.RightUnit },
     ];
 }
 function view(model){
