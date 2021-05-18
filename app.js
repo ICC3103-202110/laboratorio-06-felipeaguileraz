@@ -14,12 +14,29 @@ function app(state, update, view){
 
         const lefttemp = prompt(LeftTemperature())
         const tempvalue = prompt(TemperatureValue())
-        const unitfrom = prompt(FromUnit())
-        //if (unitfrom !== "C") or (unitfrom !==
-
-        const unitto = prompt(ToUnit())
-        //if (unitfrom !== "C") or (unitfrom !==
-
+        while (true){
+            var unitfrom = prompt(FromUnit())
+            if (unitfrom !== "C" && unitfrom !== "F" && unitfrom !== "K" ){
+                var unitfrom = prompt(FromUnit())
+                if (unitfrom === "C" || unitfrom === "F" || unitfrom === "K" ){
+                    break
+                }
+            }else{
+                break
+            }
+        }
+        while (true){
+            var unitto = prompt(ToUnit())
+            if (unitto !== "C" && unitto !== "F" && unitto !== "K" ){
+                var unitto = prompt(ToUnit())
+                if (unitto === "C" || unitto === "F" || unitto === "K" ){
+                    break
+                }
+            }else{
+                break
+            }
+        }
+    
         const newtable = update(lefttemp, tempvalue, unitfrom, unitto, model) 
         state = {
             ...state,
